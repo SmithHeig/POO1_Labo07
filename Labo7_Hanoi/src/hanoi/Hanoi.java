@@ -5,10 +5,37 @@
  */
 package hanoi;
 
+import util.Pile;
+
 /**
  *
  * @author James
  */
 public class Hanoi {
+    int disks;
+    Pile tower[];
     
+    public Hanoi(int disks, HanoiDisplayer displayer){
+        
+    }
+    
+    public Hanoi(int disks){
+        
+    }
+    
+    public void solve(){
+        
+    }
+    
+    public int[][] status(){
+        return null;
+    }
+    
+    public boolean finished(){
+        return false;
+    }
+    
+    public int turn(){
+        
+    }
 }

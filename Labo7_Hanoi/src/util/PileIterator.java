@@ -9,6 +9,18 @@ package util;
  *
  * @author James
  */
-public class PileIterator {
+public class PileIterator{
+    public PileIterator(){
+        
+    }
     
+    public Object next() {
+        
+        return null; // temp
+    }
+    
+    public boolean hasNext(){
+        
+        return false; // temp
+    }
 }

@@ -9,6 +9,6 @@ package hanoi;
  *
  * @author James
  */
-public class HanoiDisplay {
+public class HanoiDisplayer {
     
 }
