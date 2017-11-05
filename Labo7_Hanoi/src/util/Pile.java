@@ -27,10 +27,10 @@ public class Pile {
         head = newEl;
     }
     
-    public PileElement unstack(){
+    public Object unstack(){
         PileElement temp = head;
         head = head.next;
-        return temp;
+        return temp.data;
     }
     
     public String toString(){

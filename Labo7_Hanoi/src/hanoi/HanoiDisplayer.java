@@ -10,5 +10,16 @@ package hanoi;
  * @author James
  */
 public class HanoiDisplayer {
+    Hanoi hanoi;
     
+    public HanoiDisplayer(Hanoi h){
+        hanoi = h;
+    }
+    
+    public void display(){
+        System.out.println("-- Turn: " + hanoi.turn());
+        System.out.println(String.format("%7s [%s]", "One:")); // ajouter affichage de la pile
+        System.out.println(String.format("%7s [%s]", "Two:"));
+        System.out.println(String.format("%7s [%s]", "Three:"));
+    }
 }
