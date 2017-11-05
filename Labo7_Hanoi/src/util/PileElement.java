@@ -10,10 +10,15 @@ package util;
  * @author James
  */
 public class PileElement {
-    private Object data;
-    private PileElement next;
+    protected Object data;
+    protected PileElement next;
     
-    public PileElement(Object data){
+    public PileElement(Object data, PileElement oldHead){
         this.data = data;
+        this.next = oldHead;
+    }
+    
+    public String toString(){
+        return data.toString();
     }
 }

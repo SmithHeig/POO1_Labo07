@@ -10,17 +10,19 @@ package util;
  * @author James
  */
 public class PileIterator{
-    public PileIterator(){
-        
+    private PileElement currentEl;
+    
+    public PileIterator(PileElement head){
+        currentEl = head;
     }
     
-    public Object next() {
-        
-        return null; // temp
+    public PileElement next() {
+        PileElement temp = currentEl;
+        currentEl = currentEl.next;
+        return temp;
     }
     
     public boolean hasNext(){
-        
-        return false; // temp
+        return currentEl.next != null; // temp
     }
 }
