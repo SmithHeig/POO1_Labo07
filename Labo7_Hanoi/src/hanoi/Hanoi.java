@@ -16,7 +16,7 @@ public class Hanoi {
     private int disks;
     private int cmpt;
     private Pile towers[];
-    private HanoiDisplayer display;
+    private HanoiDisplayer displayer;
     
    
     public Hanoi(int disks){
@@ -29,7 +29,7 @@ public class Hanoi {
     
     public Hanoi(int disks, HanoiDisplayer displayer){
         this(disks);
-        display = displayer;
+        this.displayer = displayer;
     }
     
     public void solve(){
@@ -39,23 +39,22 @@ public class Hanoi {
     
     public int[][] status(){
         /** A demander au prof **/
-        /**Object[] objectsTower1 = towers[0].status();
+        Object[] objectsTower1 = towers[0].status();
         Object[] objectsTower2 = towers[1].status();
         Object[] objectsTower3 = towers[2].status();
-        int maxSize;
-        if(objectsTower1.length > objectsTower2.length && objectsTower1.length > objectsTower3.length){
-            maxSize = objectsTower1.length;
-        } else if(objectsTower2.length > objectsTower3.length){
-            maxSize = objectsTower2.length;
-        } else {
-            maxSize = objectsTower3.length;
+        Object[][] objectsTowers = {objectsTower1,objectsTower2,objectsTower3};
+        int[] posTower1 = new int[towers[0].size()];           
+        int[] posTower2 = new int[towers[1].size()];           
+        int[] posTower3 = new int[towers[2].size()];
+        int[][] posTowers = {posTower1,posTower2,posTower3};
+        
+        for(int i = 0; i < 3; ++i){    
+            for(int j = 0; j < towers[i].size(); ++j){
+                posTowers[i][j] = (int)objectsTowers[i][j];
+            }
         }
         
-        for(int i = 0; i < maxSize; ){
-            
-        }*/
-        
-        return null;
+        return posTowers;
     }
     
     public boolean finished(){
@@ -71,8 +70,18 @@ public class Hanoi {
             transfert(from,to,via,n-1);
             to.stack(from.unstack());
             cmpt++;
+            displayer.display(); // Affichage de status
             transfert(via,from,to,n-1);
         }
         return 0; // to change
+    }
+    
+    public String toString(){
+        String print = "";
+        print += String.format("%7s [%s]", "One:",towers[0]); // ajouter affichage de la pile
+        print += String.format("%7s [%s]", "Two:",towers[1]);
+        print += String.format("%7s [%s]", "Three:", towers[2]);
+        
+        return print;
     }
 }

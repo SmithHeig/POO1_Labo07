@@ -36,7 +36,7 @@ public class Pile {
     public String toString(){
         String print = "";
         for(Object o : status()){
-            print += "<" + o + "> ";
+            print += "<" + (int)o + "> ";
         }
         return print;
     }

@@ -18,8 +18,6 @@ public class HanoiDisplayer {
     
     public void display(){
         System.out.println("-- Turn: " + hanoi.turn());
-        System.out.println(String.format("%7s [%s]", "One:")); // ajouter affichage de la pile
-        System.out.println(String.format("%7s [%s]", "Two:"));
-        System.out.println(String.format("%7s [%s]", "Three:"));
+        System.out.println(hanoi);
     }
 }
