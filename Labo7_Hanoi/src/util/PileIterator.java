@@ -17,12 +17,20 @@ public class PileIterator{
     }
     
     public Object next() {
-        PileElement temp = currentEl;
+        if(currentEl == null){
+            return null;
+            //Exception ?
+        }
+        Object temp = currentEl.data;
         currentEl = currentEl.next;
-        return temp.data;
+        return temp;
     }
     
     public boolean hasNext(){
+        // Si pile 
+        if(currentEl == null){
+            return false;
+        }
         return (currentEl.next != null); // temp
     }
 }

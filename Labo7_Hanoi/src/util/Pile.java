@@ -57,7 +57,10 @@ public class Pile {
     
     public int size(){
         PileIterator it = iterator();
-        int cmpt = 0;
+        if(head == null){
+            return 0;
+        }
+        int cmpt = 1;
         while(it.hasNext()){
             cmpt++;
             it.next();

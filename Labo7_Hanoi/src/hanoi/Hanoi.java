@@ -9,7 +9,6 @@ import util.Pile;
 import util.PileIterator;
 
 /**
- *
  * @author James
  */
 public class Hanoi {
@@ -26,7 +25,6 @@ public class Hanoi {
     }
     
     public Hanoi(int disks, HanoiDisplayer displayer){
-        
         this.disks = disks;
         cmpt = 0;
         
@@ -89,9 +87,9 @@ public class Hanoi {
     
     public String toString(){
         String print = "";
-        print += String.format("%7s [%s]", "One:",towers[0]); // ajouter affichage de la pile
-        print += String.format("%7s [%s]", "Two:",towers[1]);
-        print += String.format("%7s [%s]", "Three:", towers[2]);
+        print += String.format("%7s [%s]\n", "One:",towers[0]); // ajouter affichage de la pile
+        print += String.format("%7s [%s]\n", "Two:",towers[1]);
+        print += String.format("%7s [%s]\n", "Three:", towers[2]);
         
         return print;
     }
