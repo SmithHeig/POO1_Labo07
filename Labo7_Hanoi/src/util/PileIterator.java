@@ -23,6 +23,6 @@ public class PileIterator{
     }
     
     public boolean hasNext(){
-        return currentEl.next != null; // temp
+        return (currentEl.next != null); // temp
     }
 }

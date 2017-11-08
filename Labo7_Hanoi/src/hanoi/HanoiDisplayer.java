@@ -10,14 +10,9 @@ package hanoi;
  * @author James
  */
 public class HanoiDisplayer {
-    Hanoi hanoi;
     
-    public HanoiDisplayer(Hanoi h){
-        hanoi = h;
-    }
-    
-    public void display(){
-        System.out.println("-- Turn: " + hanoi.turn());
-        System.out.println(hanoi);
+    public void display(Hanoi h){
+        System.out.println("-- Turn: " + h.turn());
+        System.out.println(h);
     }
 }

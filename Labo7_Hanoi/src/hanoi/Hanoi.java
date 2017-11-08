@@ -16,19 +16,30 @@ public class Hanoi {
     private int disks;
     private int cmpt;
     private Pile towers[];
+    private final int NB_TOWERS = 3;
     private HanoiDisplayer displayer;
     
    
     public Hanoi(int disks){
-        cmpt = 0;
-        Pile tower1 = new Pile();
-        for(int i = 0; i < disks; ++i){
-            tower1.stack(i);
-        }
+        this(disks, new HanoiDisplayer());
+        
     }
     
     public Hanoi(int disks, HanoiDisplayer displayer){
-        this(disks);
+        
+        this.disks = disks;
+        cmpt = 0;
+        
+        // Création des piles
+        towers = new Pile[NB_TOWERS];
+        
+        for(int i = 0; i < NB_TOWERS; ++i){
+            towers[i] = new Pile();
+        }
+        
+        for(int i = 0; i < disks; ++i){
+            towers[0].stack(i);
+        }
         this.displayer = displayer;
     }
     
@@ -70,7 +81,7 @@ public class Hanoi {
             transfert(from,to,via,n-1);
             to.stack(from.unstack());
             cmpt++;
-            displayer.display(); // Affichage de status
+            displayer.display(this); // Affichage de status
             transfert(via,from,to,n-1);
         }
         return 0; // to change
