@@ -30,6 +30,8 @@ public class Labo7_Hanoi {
         test.stack(8);
         test.stack(9);
         System.out.println(test);
+        
+        
         // Notre hanoi bien aimé !
         Hanoi h = new Hanoi(4);
         

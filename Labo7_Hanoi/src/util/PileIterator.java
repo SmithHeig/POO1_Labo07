@@ -13,24 +13,18 @@ public class PileIterator{
     private PileElement currentEl;
     
     PileIterator(PileElement element){
-        currentEl = element;
+        currentEl = new PileElement(null,element);
     }
     
     public Object next() {
-        if(currentEl == null){
-            return null;
-            //Exception ?
+        if(!hasNext()){
+            return null; //Exception ?
         }
-        Object temp = currentEl.data;
         currentEl = currentEl.next;
-        return temp;
+        return currentEl;
     }
     
     public boolean hasNext(){
-        // Si pile 
-        if(currentEl == null){
-            return false;
-        }
         return (currentEl.next != null); // temp
     }
 }
