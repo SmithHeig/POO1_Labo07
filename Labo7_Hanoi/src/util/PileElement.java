@@ -9,11 +9,11 @@ package util;
  *
  * @author James
  */
-public class PileElement {
-    protected Object data;
-    protected PileElement next;
+class PileElement {
+    Object data;          //prof ?
+    PileElement next;     //prof ?
     
-    public PileElement(Object data, PileElement oldHead){
+    PileElement(Object data, PileElement oldHead){
         this.data = data;
         this.next = oldHead;
     }

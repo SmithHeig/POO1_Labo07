@@ -12,14 +12,14 @@ package util;
 public class PileIterator{
     private PileElement currentEl;
     
-    public PileIterator(PileElement head){
-        currentEl = head;
+    PileIterator(PileElement element){
+        currentEl = element;
     }
     
-    public PileElement next() {
+    public Object next() {
         PileElement temp = currentEl;
         currentEl = currentEl.next;
-        return temp;
+        return temp.data;
     }
     
     public boolean hasNext(){

@@ -36,21 +36,19 @@ public class Pile {
     public String toString(){
         String print = "";
         for(Object o : status()){
-            print += "<" + (int)o + "> ";
+            print += "<" + o + "> ";
         }
         return print;
     }
     
     public Object[] status(){
         PileIterator it = iterator();
-        PileElement element;
         Object[] objects = new Object[size()];
         int i = 0;
         while(it.hasNext()){
-            element = it.next();
-            objects[i++] = element.data;
+            objects[i++] = it.next();
         }
-        return null;
+        return objects;
     }
     
     public PileIterator iterator(){
