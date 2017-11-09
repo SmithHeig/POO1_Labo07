@@ -6,6 +6,7 @@
 package labo7_hanoi;
 
 import hanoi.*;
+import hanoi.gui.*;
 //import hanoi.gui.JHanoi;
 import util.Pile;
 
@@ -18,19 +19,7 @@ public class Labo7_Hanoi {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        Pile test = new Pile();
-        test.stack(1);
-        test.stack(2);
-        test.stack(3);
-        test.stack(4);
-        test.stack(5);
-        test.stack(6);
-        test.stack(7);
-        test.stack(8);
-        test.stack(9);
-        System.out.println(test);
-        
+    public static void main(String[] args) {    
         
         // Notre hanoi bien aimé !
         Hanoi h = new Hanoi(4);
@@ -38,6 +27,7 @@ public class Labo7_Hanoi {
         // Résoud-toi Ô hanoi-sama !
         h.solve();
         
+        JHanoi hanoiGui = new JHanoi();
         
     }
     
