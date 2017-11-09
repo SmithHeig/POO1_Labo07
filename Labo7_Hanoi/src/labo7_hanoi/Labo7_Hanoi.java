@@ -27,7 +27,7 @@ public class Labo7_Hanoi {
         // Résoud-toi Ô hanoi-sama !
         h.solve();
         
-        JHanoi hanoiGui = new JHanoi();
+        //JHanoi hanoiGui = new JHanoi();
         
     }
     
