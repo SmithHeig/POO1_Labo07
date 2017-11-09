@@ -21,7 +21,7 @@ public class PileIterator{
             return null; //Exception ?
         }
         currentEl = currentEl.next;
-        return currentEl;
+        return currentEl.data;
     }
     
     public boolean hasNext(){

@@ -5,8 +5,7 @@
  */
 package hanoi;
 
-import util.Pile;
-import util.PileIterator;
+import util.*;
 
 /**
  * @author James
@@ -35,7 +34,7 @@ public class Hanoi {
             towers[i] = new Pile();
         }
         
-        for(int i = 0; i < disks; ++i){
+        for(int i = disks; i > 0; --i){
             towers[0].stack(i);
         }
         this.displayer = displayer;
@@ -52,6 +51,7 @@ public class Hanoi {
         Object[] objectsTower2 = towers[1].status();
         Object[] objectsTower3 = towers[2].status();
         Object[][] objectsTowers = {objectsTower1,objectsTower2,objectsTower3};
+        System.out.println(towers[0].size() + " " + towers[1].size() + " " + towers[2].size());
         int[] posTower1 = new int[towers[0].size()];           
         int[] posTower2 = new int[towers[1].size()];           
         int[] posTower3 = new int[towers[2].size()];
