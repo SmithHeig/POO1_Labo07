@@ -1,5 +1,7 @@
 package util;
 
+import java.util.EmptyStackException;
+
 /**
  * Classe Représentant un itérateur sur la classe Pile
  * @author Adrien Alleman et James Smith
@@ -9,20 +11,19 @@ public class PileIterator{
     
     /**
      * Constructeur d'itérateur
-     * @param element élément ou doit commencé l'itérateur 
-     *        (en général la tête de la pile)
+     * @param element élément ou doit commencé l'itérateur
      */
     PileIterator(PileElement element){
         currentEl = new PileElement(null,element);
     }
     
     /**
-     * Permet d'aller à l'élément suivant et de retourner l'élément actuel
-     * @return l'élément actuel
+     * Permet d'aller à l'élément suivant et de retourner celui-ci.
+     * @return l'élément suivant
      */
     public Object next() {
         if(!hasNext()){
-            return null; //Exception ?
+            throw new EmptyStackException();
         }
         currentEl = currentEl.next;
         return currentEl.data;

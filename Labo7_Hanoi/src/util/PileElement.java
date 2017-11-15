@@ -5,8 +5,8 @@ package util;
  * @author Adrien Alleman et James Smith
  */
 class PileElement {
-    Object data;          //prof ?
-    PileElement next;     //prof ?
+    Object data;
+    PileElement next;
     
     /**
      * Constructeur d'élément de la Pile
@@ -16,13 +16,5 @@ class PileElement {
     PileElement(Object data, PileElement oldHead){
         this.data = data;
         this.next = oldHead;
-    }
-    
-    /**
-     * Fonction permettant de représenté l'objet contenu dans la PileElement
-     * @return String contenant la représentation de l'objet contenu
-     */
-    public String toString(){
-        return data.toString();
     }
 }

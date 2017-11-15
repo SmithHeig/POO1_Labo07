@@ -1,12 +1,14 @@
 package util;
 
+import java.util.EmptyStackException;
+
 /**
  * Classe représentant une Pile LIFO
  * @author Adrien Alleman et James Smith
  */
 public class Pile {
     private PileElement head;
-    
+    private int size;
     /**
      * Constructeur par défaut
      */
@@ -31,15 +33,22 @@ public class Pile {
     public void stack(Object o){
         PileElement newEl = new PileElement(o,head);
         head = newEl;
+        ++size;
     }
     
     /**
      * Fonction qui permet d'enlever l'élément du sommet de la Pile
      * @return l'Objet enlever de la Pile
+     * @exception si la pile est vide, throws EmptyStackException.
      */
     public Object unstack(){
+        if(size == 0) {
+            throw new EmptyStackException();
+        }
+        
         PileElement temp = head;
         head = head.next;
+        --size;
         return temp.data;
     }
     
@@ -82,14 +91,7 @@ public class Pile {
      * @return nombre d'élément dans la pile
      */
     public int size(){
-        PileIterator it = iterator();
-
-        int cmpt = 0;
-        while(it.hasNext()){
-            cmpt++;
-            it.next();
-        }
-        return cmpt;
+        return size;
     }
     
 }
