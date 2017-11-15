@@ -39,7 +39,6 @@ public class Pile {
     /**
      * Fonction qui permet d'enlever l'élément du sommet de la Pile
      * @return l'Objet enlever de la Pile
-     * @exception si la pile est vide, throws EmptyStackException.
      */
     public Object unstack(){
         if(size == 0) {
