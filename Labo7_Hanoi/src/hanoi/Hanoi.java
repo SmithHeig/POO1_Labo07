@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hanoi;
 
 import util.*;
 
 /**
- * @author James
+ * Classe représentant le jeu d'Hanoi
+ * @author Adrien Alleman et James Smith
  */
 public class Hanoi {
     private int disks;
@@ -17,12 +13,20 @@ public class Hanoi {
     private final int NB_TOWERS = 3;
     private HanoiDisplayer displayer;
     
-   
+    /**
+     * Constructeur du jeu d'Hanoi
+     * @param disks nombres de disques
+     */
     public Hanoi(int disks){
         this(disks, new HanoiDisplayer());
         
     }
-    
+   
+    /**
+     * Constructeur du jeu d'Hanoi avec un displayer (affichage) spécifique
+     * @param disks Nombre de disqeus
+     * @param displayer Class comprenant des fonctions d'affichage
+     */
     public Hanoi(int disks, HanoiDisplayer displayer){
         this.disks = disks;
         cmpt = 0;
@@ -40,11 +44,19 @@ public class Hanoi {
         this.displayer = displayer;
     }
     
+    /**
+     * Fonction résolvant le jeu d'Hanoi
+     */
     public void solve(){
         cmpt = 0; //reset compteur
         transfert(towers[0], towers[1], towers[2], disks);
     }
     
+    /**
+     * Fonction retournant l'état du jeu
+     * @return un tableau de int comportant les trois tours et les numéros des disques
+     *         dans chaqu'une d'elle
+     */
     public int[][] status(){
         /** A demander au prof **/
         Object[] objectsTower1 = towers[0].status();
@@ -66,15 +78,30 @@ public class Hanoi {
         return posTowers;
     }
     
+    /**
+     * Fonction détérminant si le jeu est terminer ou non
+     * @return true si le jeu est fini
+     */
     public boolean finished(){
-        return false;
+        return false; // TO DO
     }
     
+    /**
+     * Fonction retournant le nombre de tours jouer (état courant)
+     * @return nombre de tour joué
+     */
     public int turn(){
         return cmpt; // To change
     }
     
-    private int transfert(Pile from, Pile via, Pile to, int n){
+    /**
+     * Fonction réalisant les transferts des disques d'une tours à l'autre
+     * @param from tour ou part le disque
+     * @param via tour par lequel le disque va passer
+     * @param to tour ou le dique va arrivé
+     * @param n nombre de disques
+     */
+    private void transfert(Pile from, Pile via, Pile to, int n){
         if(n > 0){
             transfert(from,to,via,n-1);
             to.stack(from.unstack());
@@ -82,9 +109,12 @@ public class Hanoi {
             displayer.display(this); // Affichage de status
             transfert(via,from,to,n-1);
         }
-        return 0; // to change
     }
     
+    /**
+     * Fonction retournant un représentation du jeu en caractère ASCII
+     * @return String - retourne l'état du jeu
+     */
     public String toString(){
         String print = "";
         print += String.format("%7s [%s]\n", "One:",towers[0]); // ajouter affichage de la pile
