@@ -2,7 +2,6 @@ package labo7_hanoi;
 
 import hanoi.*;
 import hanoi.gui.*;
-import util.Pile;
 
 /**
  * Classe principale du jeu d'hanoi
@@ -22,6 +21,7 @@ public class Labo7_Hanoi {
         // Résoud-toi Ô hanoi-sama !
         h.solve();
         
+        // et dieu créa la GUI !
         JHanoi hanoiGui = new JHanoi();
         
     }

@@ -71,6 +71,7 @@ public class Pile {
     public Object[] status(){
         PileIterator it = iterator();
         Object[] objects = new Object[size()];
+        //System.out.println(size);
         int i = 0;
         while(it.hasNext()){
             objects[i++] = it.next();

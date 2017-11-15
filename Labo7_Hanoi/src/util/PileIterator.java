@@ -14,19 +14,22 @@ public class PileIterator{
      * @param element élément ou doit commencé l'itérateur
      */
     PileIterator(PileElement element){
-        currentEl = new PileElement(null,element);
+        currentEl = element;
     }
     
+    
+    
     /**
-     * Permet d'aller à l'élément suivant et de retourner celui-ci.
+     * Permet d'aller à l'élément suivant et de retourner le data de l'element courant.
      * @return l'élément suivant
      */
     public Object next() {
         if(!hasNext()){
             throw new EmptyStackException();
         }
+        PileElement temp = currentEl;
         currentEl = currentEl.next;
-        return currentEl.data;
+        return temp.data;
     }
     
     /**
@@ -34,6 +37,6 @@ public class PileIterator{
      * @return true si il y a un élément suivant et false dans le cas contraire
      */
     public boolean hasNext(){
-        return (currentEl.next != null); // temp
+        return (currentEl != null);
     }
 }
