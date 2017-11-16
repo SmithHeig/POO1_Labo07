@@ -94,5 +94,4 @@ public class Pile {
     public int size(){
         return size;
     }
-    
 }
