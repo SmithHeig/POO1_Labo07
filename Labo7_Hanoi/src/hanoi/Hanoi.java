@@ -49,6 +49,7 @@ public class Hanoi {
      */
     public void solve(){
         cmpt = 0; //reset compteur
+        displayer.display(this);
         transfert(towers[0], towers[1], towers[2], disks);
     }
     
@@ -58,23 +59,15 @@ public class Hanoi {
      *         dans chaqu'une d'elle
      */
     public int[][] status(){
-        /** A demander au prof **/
-        Object[] objectsTower1 = towers[0].status();
-        Object[] objectsTower2 = towers[1].status();
-        Object[] objectsTower3 = towers[2].status();
-        Object[][] objectsTowers = {objectsTower1,objectsTower2,objectsTower3};
+        int[][] posTowers = new int[NB_TOWERS][];
         
-        System.out.println(towers[0].size() + " " + towers[1].size() + " " + towers[2].size());
-        
-        int[] posTower1 = new int[towers[0].size()];           
-        int[] posTower2 = new int[towers[1].size()];           
-        int[] posTower3 = new int[towers[2].size()];
-        int[][] posTowers = {posTower1,posTower2,posTower3};
-        
-        for(int i = 0; i < 3; ++i){    
+        for(int i = 0; i < NB_TOWERS; ++i){
+            int[] t = new int[towers[i].size()];
             for(int j = 0; j < towers[i].size(); ++j){
-                posTowers[i][j] = (int)objectsTowers[i][j];
+                // cast en int car nous avons un tableau d'objet représentant des disks (int)
+                t[j] = (int)(towers[i].status())[j];
             }
+            posTowers[i] = t;
         }
         
         return posTowers;
@@ -85,7 +78,7 @@ public class Hanoi {
      * @return true si le jeu est fini
      */
     public boolean finished(){
-        return false; // TO DO
+        return towers[NB_TOWERS-1].size() == disks;
     }
     
     /**
