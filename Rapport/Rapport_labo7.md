@@ -27,3 +27,30 @@ Etant donné que celui-ci a actuellement $ 13,7\ milliards\ d'années$ il nous r
 ## Question 2
 
  
+
+## Algorithme de Hanoi
+
+```java
+private void transfert(Pile from, Pile via, Pile to, int n){
+  if(n > 0){
+    transfert(from,to,via,n-1);
+    to.stack(from.unstack());
+    cmpt++;                  // incrémentation du nombre de tour
+    displayer.display(this); // Affichage de status
+    transfert(via,from,to,n-1);
+  }
+}
+```
+
+Pour résoudre le jeu d'Hanoi, nous avons décidé de prendre une solution récursive que nous avions déjà étudié en ASD1. 
+
+- Pile from - est la Pile de départ
+- Pile via - est la Pile qui servira d'intérmédiaire
+- Pile to - est la Pile ou les disques finiront.
+
+L'algorithme consiste à déplacé tous les disques sauf le plus gros sur la tour intérmédiaire, puis déplacer le plus gros sur la pile de destination et redéplacer les disques sur la tour de destination.
+
+Pour mieux visualisé voilà une représentation graphique:
+
+![Hanoi Algorithme](img/HanoiAlgo.PNG)
+

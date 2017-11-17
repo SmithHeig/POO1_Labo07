@@ -100,7 +100,7 @@ public class Hanoi {
         if(n > 0){
             transfert(from,to,via,n-1);
             to.stack(from.unstack());
-            cmpt++;
+            cmpt++;                  // Incrémentation du nombre de tour
             displayer.display(this); // Affichage de status
             transfert(via,from,to,n-1);
         }
