@@ -11,7 +11,11 @@ public class Labo7_Hanoi {
 
     /**
      * Fonction principal du programme
-     * @param args the command line arguments
+     * @param args the command line arguments. Expected values : <b>"testpile"</b> will launch the 
+     * test programm of our Pile class. <b>int greater than 1</b> the number of disks to be used. 
+     * Be aware that the turn counter supports 31 disks at maximum as it is stored in an int.
+     * <b>none</b> no arguments will launch the programm in GUI mode.
+     * 
      */
     public static void main(String[] args) {    
         
@@ -23,7 +27,12 @@ public class Labo7_Hanoi {
                 // Extraction du saint nombre de disks.
                 // Peut lancer une exception si l'utilisateur n'est pas bienveillant !
                 int nbDisks = Integer.parseInt(args[0]);
-
+                
+                // Si l'utilisateur est fourbe on lance l'exception nous-même !
+                if(nbDisks < 1){
+                    throw new IllegalArgumentException();
+                }
+                
                 // Bienvenue sur terre, hanoi bien aimé !
                 Hanoi h = new Hanoi(nbDisks);
 

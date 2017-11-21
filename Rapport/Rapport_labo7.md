@@ -24,8 +24,9 @@ $au\ bout\ de \ 584.554549\ milliards\ d'années$
 
 Etant donné que celui-ci a actuellement $ 13,7\ milliards\ d'années$ il nous reste donc $584.5 - 13.7 = 570.8\ milliards\ d'années$ avant que l'univers ne disparaisse.
 
-## Question 2
+##Algorithme
 
+<<<<<<< Updated upstream:Rapport/Rapport_labo7.md
  
 
 ## Algorithme de Hanoi
@@ -54,3 +55,41 @@ Pour mieux visualisé voilà une représentation graphique:
 
 ![Hanoi Algorithme](img/HanoiAlgo.PNG)
 
+=======
+L'algorithme utilisé est récursif et entièrement basé sur la fonction `transfer()`
+
+```java
+// Appel initial (From pile A, via pile B, to pile c, nombre de disques)
+private void transfert(Pile from, Pile via, Pile to, int n){
+    // jusqu'à ce que le dernier étage (n = 1) ait été transféré
+  	if(n > 0){
+       	// Appel récursif pour transférer toute la tour sauf le dernier disque sur la pile 
+      	// intermédiaire.
+        transfert(from,to,via,n-1);
+      	// transfer du plus petit disque de la pile from à la pile to
+        to.stack(from.unstack());
+      	// Appel récursif pour reconstruire la tour depuis la pile intermédiaire à la pile
+      	// de destination.
+        transfert(via,from,to,n-1);
+    }
+}
+```
+
+
+
+La formule utilisée pour calculer le nombre de déplacements requis se démontres facilement par réccurence :
+
+$n = nombre\ de\ disques$
+
+$2^n-1 = nombre\ de\ mouvements\ nécessaires$
+
+Le résultat est vrait pour $n = 1$ car il faut bien un seul déplacement pour déplacer 1 disque de la première à la troisième aiguille.
+
+Supposons que l'algorithme soit vrait pour $n$. On a alors $2^n - 1$ coups pour n anneaux. 
+
+Pour un anneau de plus, soit $n + 1$ anneaux, on doit transférer une tour de taille $n$ sur la pile intermédiaire (le via ci-dessus) en $2^n - 1$ coups, puis on doit déplacer l'anneau supplémentaire de la pile de départ à la pile d'arrivée, en $ 1\ coup$ , puis redéplacer toute la tour de taille $n$ de la pile intermédiaire à la pile finale, au dessus de l'anneau supplémentaire qui est déjà en place.
+
+Au total pour $n+1$ disques on a donc $(2^n - 1) + 1 + (2^n - 1)$ déplacements soit $ 2(2^n - 1) + 1 = 2^{n+1}-1 $ qui corresponds à la formule que l'on a supposé vrai.
+
+Comme démontré ci dessus le pas initial est correcte et le pas d'incrémentation est correct la formule est donc démontrée.
+>>>>>>> Stashed changes:Rapport_labo7.md
