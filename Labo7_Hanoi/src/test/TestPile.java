@@ -1,18 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package test;
 
 import java.util.EmptyStackException;
 import util.*;
 
 /**
- *
- * @author James
+ * Fichier de test. Test les fonctions de la classe Pile, PileElement, PileIterator
+ * @author Smith James et Alleman Adrien
  */
 public class TestPile {
+    
+    /**
+     * Fonction de test des classes de la classe Pile, PileElement et Pile Iterator
+     * @author Smith James et Alleman Adrien
+     */
     public static void test(){
         // INIT1
         Pile pile1 = new Pile();

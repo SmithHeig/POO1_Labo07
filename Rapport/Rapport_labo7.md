@@ -1,5 +1,9 @@
 #POO - Labo 7 - Les tours de Hanoi
 
+Par Adrien Allemand et James Smith
+
+[TOC]
+
 ## Question 1
 
 *En  supposant  des  moines  surentraînés  capables  de  déplacer  un  disque  à  la  seconde,  combien  de  temps reste-t-il avant que l’univers disparaisse (celui-ci a actuellement 13.7 milliards d’années) ?*
@@ -24,10 +28,6 @@ $au\ bout\ de \ 584.554549\ milliards\ d'années$
 
 Etant donné que celui-ci a actuellement $ 13,7\ milliards\ d'années$ il nous reste donc $584.5 - 13.7 = 570.8\ milliards\ d'années$ avant que l'univers ne disparaisse.
 
-##Algorithme
-
-<<<<<<< Updated upstream:Rapport/Rapport_labo7.md
- 
 
 ## Algorithme de Hanoi
 
@@ -55,7 +55,6 @@ Pour mieux visualisé voilà une représentation graphique:
 
 ![Hanoi Algorithme](img/HanoiAlgo.PNG)
 
-=======
 L'algorithme utilisé est récursif et entièrement basé sur la fonction `transfer()`
 
 ```java
@@ -92,4 +91,18 @@ Pour un anneau de plus, soit $n + 1$ anneaux, on doit transférer une tour de ta
 Au total pour $n+1$ disques on a donc $(2^n - 1) + 1 + (2^n - 1)$ déplacements soit $ 2(2^n - 1) + 1 = 2^{n+1}-1 $ qui corresponds à la formule que l'on a supposé vrai.
 
 Comme démontré ci dessus le pas initial est correcte et le pas d'incrémentation est correct la formule est donc démontrée.
->>>>>>> Stashed changes:Rapport_labo7.md
+
+## Diagramme des classes
+
+![Diagramme de classe](img/UMLHanoi.PNG)
+
+
+
+## Description des classes
+
+Voir la $JAVADOC$  fournie en annexe.
+
+
+
+## Sources du programme
+
